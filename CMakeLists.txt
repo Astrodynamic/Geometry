@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 
 project(Geometry)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -28,7 +28,6 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/rectangle
   ${CMAKE_CURRENT_SOURCE_DIR}/square
   ${CMAKE_CURRENT_SOURCE_DIR}/triangle
-  ${CMAKE_CURRENT_SOURCE_DIR}/rhombus
 )
 
 set(HEADERS
@@ -38,7 +37,6 @@ set(HEADERS
   rectangle/rectangle.h
   square/square.h
   triangle/triangle.h
-  rhombus/rhombus.h
 )
 
 set(SOURCES
@@ -48,7 +46,6 @@ set(SOURCES
   rectangle/rectangle.cc
   square/square.cc
   triangle/triangle.cc
-  rhombus/rhombus.cc
 )
 
 add_executable(${PROJECT_NAME}
@@ -56,6 +53,11 @@ add_executable(${PROJECT_NAME}
   ${SOURCES}
   main.cc
 )
+
+set_target_properties(sfml-graphics PROPERTIES CXX_STANDARD 11 CXX_STANDARD_REQUIRED ON)
+set_target_properties(sfml-window PROPERTIES CXX_STANDARD 11 CXX_STANDARD_REQUIRED ON)
+set_target_properties(sfml-system PROPERTIES CXX_STANDARD 11 CXX_STANDARD_REQUIRED ON)
+set_target_properties(sfml-audio PROPERTIES CXX_STANDARD 11 CXX_STANDARD_REQUIRED ON)
 
 # Подключаем библиотеки SFML
 target_link_libraries(${PROJECT_NAME}

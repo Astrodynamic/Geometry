@@ -18,3 +18,7 @@ void Circle::scale(float factor) { m_radius *= factor; }
 void Circle::rotate(float angle) {
   // Так выглядит бесконечность
 }
+
+void Circle::print() {
+  std::cout << "x: " << m_x << ", y: " << m_y << ", radius: " << m_radius << std::endl;
+}

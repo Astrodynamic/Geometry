@@ -11,6 +11,7 @@ class Line : public Primitive {
   virtual void move(float dx, float dy) override;
   virtual void scale(float factor) override;
   virtual void rotate(float angle) override;
+  virtual void print() override;
 
  private:
   float m_x1, m_y1, m_x2, m_y2;
