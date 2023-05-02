@@ -22,13 +22,33 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(SFML)
 
 include_directories(
-  # ${CMAKE_CURRENT_SOURCE_DIR}/car
+  ${CMAKE_CURRENT_SOURCE_DIR}/primitive
+  ${CMAKE_CURRENT_SOURCE_DIR}/line
+  ${CMAKE_CURRENT_SOURCE_DIR}/circle
+  ${CMAKE_CURRENT_SOURCE_DIR}/rectangle
+  ${CMAKE_CURRENT_SOURCE_DIR}/square
+  ${CMAKE_CURRENT_SOURCE_DIR}/triangle
+  ${CMAKE_CURRENT_SOURCE_DIR}/rhombus
 )
 
 set(HEADERS
+  primitive/primitive.h
+  line/line.h
+  circle/circle.h
+  rectangle/rectangle.h
+  square/square.h
+  triangle/triangle.h
+  rhombus/rhombus.h
 )
 
 set(SOURCES
+  primitive/primitive.cc
+  line/line.cc
+  circle/circle.cc
+  rectangle/rectangle.cc
+  square/square.cc
+  triangle/triangle.cc
+  rhombus/rhombus.cc
 )
 
 add_executable(${PROJECT_NAME}
