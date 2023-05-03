@@ -23,7 +23,7 @@ int main() {
     for (auto& primitive : primitives) {
       // primitive->print();
       primitive->draw(window);
-      primitive->rotate(0.01);
+      primitive->rotate(0.1f);
     }
     window.display();
     sf::sleep(sf::milliseconds(50));

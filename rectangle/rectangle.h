@@ -14,7 +14,6 @@ class Rectangle : public Primitive {
 
  protected:
   float m_x, m_y, m_width, m_height;
-  float m_trans_matrix[3][3];
-
-  void apply_transform(sf::VertexArray& vertex_array);
+  
+  sf::Transform m_transform;
 };
