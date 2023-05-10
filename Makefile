@@ -1,19 +1,17 @@
 all: build
 
-build: geometry
+build: install
 
-rebuild: clean build
+rebuild: clean install
 
-geometry:
-	cmake -S . -B build
-	cmake --build build
+install:
+	cmake -S . -B ./build
+	cmake --build ./build
 
 unistall:
 	find ./ -name "build" -type d -exec rm -rf {} +
 
 clean: unistall
+	rm -rf ./lib/*
 
-run:
-	./build/Geometry
-
-.PHONY: all build rebuild geometry unistall clean
+.PHONY: all build rebuild unistall clean
